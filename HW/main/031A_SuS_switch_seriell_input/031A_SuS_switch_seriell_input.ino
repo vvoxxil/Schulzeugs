@@ -5,8 +5,7 @@
 #define LED D13  // Definiert den Pin für die LED
 
 int new_value;    // Variable zur Speicherung des neuen eingelesenen Wertes
-int auswahl_var;  // Variable zur Auswahl des Falles
-
+int auswahl_var;  // Variable zur Auswahl des Falles 
 void setup() {
   pinMode(LED, OUTPUT);  // Setzt den LED-Pin als Ausgang
   Serial.begin(9600);    // Startet die serielle Kommunikation mit 9600 Baud
@@ -15,6 +14,7 @@ void setup() {
 void loop() {
   if (Serial.available() > 0)  // Prüft, ob Daten im seriellen Puffer verfügbar sind
   {
+    new_value = Serial.read();
     //>>>>>>>>>>>>>> HIER ERGÄNZEN <<<<<<<<<<<<<<<<<<<<<<< // Liest die nächste Ganzzahl aus dem seriellen Puffer
   
     if (Serial.read() == '\n')  // Prüft, ob das nächste Zeichen ein Zeilenumbruch (ENTER) ist    
